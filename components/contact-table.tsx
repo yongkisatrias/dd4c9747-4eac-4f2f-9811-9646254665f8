@@ -27,10 +27,10 @@ const ContactTable = async ({
         {contacts.map((contact, index) => (
           <tr key={contact.id} className="bg-white border-b">
             <td className="py-3 px-6">{index + 1}</td>
-            <td className="py-3 px-6">{contact.firstName}</td>
-            <td className="py-3 px-6">{contact.lastName}</td>
-            <td className="py-3 px-6">{contact.email}</td>
-            <td className="py-3 px-6">{contact.phone}</td>
+            <td className="py-3 px-6 capitalize">{contact.firstName}</td>
+            <td className="py-3 px-6 capitalize">{contact.lastName}</td>
+            <td className="py-3 px-6 capitalize">{contact.email}</td>
+            <td className="py-3 px-6 capitalize">{contact.phone}</td>
             <td className="py-3 px-6">
               {formatDate(contact.createdAt.toString())}
             </td>

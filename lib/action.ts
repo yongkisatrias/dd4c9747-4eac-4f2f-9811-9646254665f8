@@ -7,10 +7,10 @@ import { redirect } from "next/navigation";
 import validator from "validator";
 
 const ContactSchema = z.object({
-  firstName: z.string().min(3),
-  lastName: z.string().min(3),
-  email: z.string().min(5).refine(validator.isEmail),
-  phone: z.string().min(10).refine(validator.isMobilePhone),
+  firstName: z.string().min(3).max(10),
+  lastName: z.string().min(3).max(10),
+  email: z.string().min(5).max(20).refine(validator.isEmail),
+  phone: z.string().min(10).max(15).refine(validator.isMobilePhone),
 });
 
 export const saveContact = async (prevState: any, formData: FormData) => {
