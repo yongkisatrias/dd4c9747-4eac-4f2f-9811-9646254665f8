@@ -26,7 +26,7 @@ const ContactTable = async () => {
             </td>
             <td className="flex justify-center gap-1 py-3">
               <EditButton id={contact.id} />
-              <DeleteButton />
+              <DeleteButton id={contact.id} />
             </td>
           </tr>
         ))}
