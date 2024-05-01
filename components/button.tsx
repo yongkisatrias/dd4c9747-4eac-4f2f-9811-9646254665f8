@@ -9,7 +9,7 @@ import { deleteContact } from "@/lib/action";
 export const CreateButton = () => {
   return (
     <Link
-      href="/contacts/create"
+      href="/create"
       className="inline-flex items-center space-x-1 text-white bg-blue-700 hover:bg-blue-800 px-5 py-[9px] rounded-sm text-sm"
     >
       <IoAddSharp size={20} />
@@ -21,7 +21,7 @@ export const CreateButton = () => {
 export const EditButton = ({ id }: { id: string }) => {
   return (
     <Link
-      href={`/contacts/edit/${id}`}
+      href={`/edit/${id}`}
       className="rounded-sm border p-1 hover:bg-gray-100"
     >
       <IoPencil size={20} />

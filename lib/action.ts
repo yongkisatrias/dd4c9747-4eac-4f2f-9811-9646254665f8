@@ -4,10 +4,13 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import validator from "validator";
 
 const ContactSchema = z.object({
-  name: z.string().min(3),
-  phone: z.string().min(10),
+  firstName: z.string().min(3),
+  lastName: z.string().min(3),
+  email: z.string().min(5).refine(validator.isEmail),
+  phone: z.string().min(10).refine(validator.isMobilePhone),
 });
 
 export const saveContact = async (prevState: any, formData: FormData) => {
@@ -22,15 +25,17 @@ export const saveContact = async (prevState: any, formData: FormData) => {
   try {
     await prisma.contact.create({
       data: {
-        name: validatedField.data.name,
+        firstName: validatedField.data.firstName,
+        lastName: validatedField.data.lastName,
+        email: validatedField.data.email,
         phone: validatedField.data.phone,
       },
     });
   } catch (error) {
     return { message: "Failed to create contact" };
   }
-  revalidatePath("/contacts");
-  redirect("/contacts");
+  revalidatePath("/");
+  redirect("/");
 };
 
 export const updateContact = async (
@@ -49,7 +54,9 @@ export const updateContact = async (
   try {
     await prisma.contact.update({
       data: {
-        name: validatedField.data.name,
+        firstName: validatedField.data.firstName,
+        lastName: validatedField.data.lastName,
+        email: validatedField.data.email,
         phone: validatedField.data.phone,
       },
       where: { id },
@@ -57,8 +64,8 @@ export const updateContact = async (
   } catch (error) {
     return { message: "Failed to update contact" };
   }
-  revalidatePath("/contacts");
-  redirect("/contacts");
+  revalidatePath("/");
+  redirect("/");
 };
 
 export const deleteContact = async (id: string) => {
@@ -69,5 +76,5 @@ export const deleteContact = async (id: string) => {
   } catch (error) {
     return { message: "Failed to delete contact" };
   }
-  revalidatePath("/contacts");
+  revalidatePath("/");
 };

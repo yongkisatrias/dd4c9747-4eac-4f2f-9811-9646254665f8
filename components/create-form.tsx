@@ -10,23 +10,65 @@ const CreateForm = () => {
   return (
     <div>
       <form action={formAction}>
-        {/* Name */}
+        {/* First Name */}
         <div className="mb-5">
           <label
-            htmlFor="name"
+            htmlFor="firstName"
             className="block text-sm font-medium text-gray-900"
           >
-            Full Name
+            First Name
           </label>
           <input
             type="text"
-            name="name"
-            id="name"
+            name="firstName"
+            id="firstName"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="Full Name..."
+            placeholder="First Name..."
           />
           <div id="name-error" aria-live="polite" aria-atomic="true">
-            <p className="mt-2 text-sm text-red-500">{state?.Error?.name}</p>
+            <p className="mt-2 text-sm text-red-500">
+              {state?.Error?.firstName}
+            </p>
+          </div>
+        </div>
+        {/* Last Name */}
+        <div className="mb-5">
+          <label
+            htmlFor="lastName"
+            className="block text-sm font-medium text-gray-900"
+          >
+            Last Name
+          </label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Last Name..."
+          />
+          <div id="name-error" aria-live="polite" aria-atomic="true">
+            <p className="mt-2 text-sm text-red-500">
+              {state?.Error?.lastName}
+            </p>
+          </div>
+        </div>
+        {/* Email */}
+        <div className="mb-5">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-900"
+          >
+            Email
+          </label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Email..."
+          />
+          <div id="phone-error" aria-live="polite" aria-atomic="true">
+            <p className="mt-2 text-sm text-red-500">{state?.Error?.email}</p>
           </div>
         </div>
         {/* Phone */}

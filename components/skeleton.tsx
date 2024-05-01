@@ -4,7 +4,9 @@ export const TableSkeleton = () => {
       <thead className="text-sm text-gray-700 uppercase bg-gray-50">
         <tr>
           <th className="py-3 px-6">#</th>
-          <th className="py-3 px-6">Name</th>
+          <th className="py-3 px-6">First Name</th>
+          <th className="py-3 px-6">Last Name</th>
+          <th className="py-3 px-6">Email</th>
           <th className="py-3 px-6">Phone Number</th>
           <th className="py-3 px-6">Created at</th>
           <th className="py-3 px-6 text-center">Action</th>

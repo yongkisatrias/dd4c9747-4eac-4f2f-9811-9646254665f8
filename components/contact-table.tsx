@@ -15,7 +15,9 @@ const ContactTable = async ({
       <thead className="text-sm text-gray-700 uppercase bg-gray-50">
         <tr>
           <th className="py-3 px-6">#</th>
-          <th className="py-3 px-6">Name</th>
+          <th className="py-3 px-6">First Name</th>
+          <th className="py-3 px-6">Last Name</th>
+          <th className="py-3 px-6">Email</th>
           <th className="py-3 px-6">Phone Number</th>
           <th className="py-3 px-6">Created at</th>
           <th className="py-3 px-6 text-center">Action</th>
@@ -25,7 +27,9 @@ const ContactTable = async ({
         {contacts.map((contact, index) => (
           <tr key={contact.id} className="bg-white border-b">
             <td className="py-3 px-6">{index + 1}</td>
-            <td className="py-3 px-6">{contact.name}</td>
+            <td className="py-3 px-6">{contact.firstName}</td>
+            <td className="py-3 px-6">{contact.lastName}</td>
+            <td className="py-3 px-6">{contact.email}</td>
             <td className="py-3 px-6">{contact.phone}</td>
             <td className="py-3 px-6">
               {formatDate(contact.createdAt.toString())}

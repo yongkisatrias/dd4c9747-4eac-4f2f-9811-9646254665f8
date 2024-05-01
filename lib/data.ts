@@ -11,7 +11,19 @@ export const getContacts = async (query: string, currentPage: number) => {
       where: {
         OR: [
           {
-            name: {
+            firstName: {
+              contains: query,
+              mode: "insensitive",
+            },
+          },
+          {
+            lastName: {
+              contains: query,
+              mode: "insensitive",
+            },
+          },
+          {
+            email: {
               contains: query,
               mode: "insensitive",
             },
@@ -48,7 +60,19 @@ export const getContactsPages = async (query: string) => {
       where: {
         OR: [
           {
-            name: {
+            firstName: {
+              contains: query,
+              mode: "insensitive",
+            },
+          },
+          {
+            lastName: {
+              contains: query,
+              mode: "insensitive",
+            },
+          },
+          {
+            email: {
               contains: query,
               mode: "insensitive",
             },
