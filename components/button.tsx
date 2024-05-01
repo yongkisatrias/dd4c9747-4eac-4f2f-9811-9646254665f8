@@ -17,10 +17,10 @@ export const CreateButton = () => {
   );
 };
 
-export const EditButton = () => {
+export const EditButton = ({ id }: { id: string }) => {
   return (
     <Link
-      href="/contacts/create"
+      href={`/contacts/edit/${id}`}
       className="rounded-sm border p-1 hover:bg-gray-100"
     >
       <IoPencil size={20} />
