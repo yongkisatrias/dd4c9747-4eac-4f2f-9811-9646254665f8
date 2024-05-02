@@ -20,7 +20,7 @@ const Contacts = async ({
   const totalPages = await getContactsPages(query);
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-5">
+    <div className="max-w-screen-xl mx-auto mt-5">
       <div className="flex items-center justify-between gap-1 mb-5">
         <Search />
         <CreateButton />
